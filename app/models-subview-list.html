@@ -1,0 +1,78 @@
+<% _.each(experiment.get('models'), function(model, key) { %>
+<div class="ui card col-sm-2 card-container">
+	<div class="content">
+		<span class="col-sm-10">
+			<div class="model-name"><b><%= model.name%></b></div>
+			<div class="created-date">Created <%= moment(model.date_created*1000).format('MM-D-YYYY, hh:mm') %> </div></span>
+			<span>
+				<i class="cube big icon" style="color:#9A8B8B"></i>
+			</span>
+		</div>
+		<div class="content model-variable">
+			<% if (model.status === 'trained' || model.status === 'deployed') {%>
+			<div class="tiny ui one statistics">		
+				<div class="ui statistic">
+					<div class="value">
+						<%= Math.random().toFixed(3) %>
+					</div>
+					<div class="label">
+						Mean Square Error
+					</div>
+				</div>				
+			</div>
+			<% } %>
+			<span class="text-p4"><strong>Variables</strong></span>
+			<div class="ui divided tiny list">
+				<div class="item">
+					<div class="right floated content"><%= model.label_variable %> </div>
+					<div class="content"><a class="header">Predicted Value</a></div>
+				</div>			
+				<div class="item">
+					<div class="right floated content">
+						<% _.each(model.input_variables, function(va, key) { %>
+						<%= va %> <br> 
+						<% }) %>
+					</div>
+					<div class="content"><a class="header">Inputs</a></div>
+				</div>			
+			</div>
+			<span class="text-p4"><strong>Approach</strong></span>
+			<div class="ui tiny list">
+				<% _.each(model.approach_template.parameters, function(value, key){ %>
+				<div class="item">
+					<div class="right floated content"><%= value.value %></div>
+					<div class="content"><%= value.name %></div>
+				</div>
+				<% } );%>
+			</div>
+
+
+		</div>
+		<div class="extra content ui two column grid">
+			<div class="column" style="padding:5px 0 0 0 !important;">
+				<% if (model.status === 'created') { %>
+				<div class="medium ui yellow horizontal label"><div class="item">Ready to Train</div></div>
+				<% } else if (model.status === 'trained') { %>
+				<div class="medium ui olive horizontal label"><div class="item">Model Trained</div></div>
+				<% } else if (model.status === 'deployed') { %>
+				<div class="medium ui green horizontal label"><div class="item">Model Deployed</div></div>
+				<% } %>						
+			</div>
+			<div class="column" style="padding:0 !important;">
+				<% if (model.status === 'created') { %>
+				<div data-action="train" data-id="<%= model.id %>" class="ui right labeled icon small green basic button model-action"><i class="cloud upload icon"></i>
+					<div class="item">Train</div>
+				</div>
+				<% } else if (model.status === 'trained') { %>
+				<div data-action="deploy" data-id="<%= model.id %>" class="ui right labeled icon small green basic button model-action"><i class="cloud upload icon"></i>
+					<div class="item">Deploy</div>
+				</div>
+				<% } else if (model.status === 'deployed') { %>
+				<div class="ui right labeled icon small green basic button model-action"><i class="cloud upload icon"></i>
+					<div class="item">UnDeploy</div>
+				</div>
+				<% } %>				
+			</div>				
+		</div>		
+	</div>
+	<% }); %>

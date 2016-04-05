@@ -1,0 +1,10 @@
+{
+  "name": "Analytics Orchestration",
+  "version": "1.0.0",
+  "dependencies": {
+    "jquery-knob": "latest",
+    "moment": "latest",
+    "jquery.sparkline": "latest",
+    "jQuery.serializeObject": "latest"
+  }
+}

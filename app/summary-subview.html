@@ -1,0 +1,261 @@
+<div class="ui grid u-padding-Vm">
+	<div class="ten wide column">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="ui grid">
+					<div class="ten wide column">
+						<h3 class="text-caps">Champion Predictive Policy</h3>
+					</div>
+					<div class="six wide column text-right">
+						<h5 class="text-caps">Monthly Cost Savings</h5>
+					</div>
+					<div class="sixteen wide column">
+						<div class="six tiny ui statistics">
+							<div class="statistic">
+								<div id="reactive-cost" class="value">
+									--
+								</div>
+								<div class="label">
+									Reactive Policy
+								</div>
+							</div>
+							<div class="statistic">
+								<div class="value">
+									-
+								</div>
+							</div>
+							<div class="statistic">
+								<div id="predictive-cost" class="value">
+									--
+								</div>
+								<div class="label">
+									Predictive Policy
+								</div>
+							</div>
+							<div class="statistic">
+								<div class="value">
+									=
+								</div>
+							</div>
+							<div class="statistic">
+								<div id="tot-saved" class="value">
+									--
+								</div>
+								<div class="label">
+									Cost Savings
+								</div>
+							</div>
+						</div>			
+						<table class="ui small celled table">
+							<thead>
+								<tr>
+									<th>EC2 Instance</th>
+									<th>Price</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>m2.medium</td>
+									<td>$ 0.052 / hour</td>
+								</tr>
+								<tr>
+									<td>c3.large</td>
+									<td>$ 0.11 / hour</td>
+								</tr>
+							</tbody>
+						</table>						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- 	<div class="six wide column">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="ui grid">
+					<div class="sixteen wide column">
+						<h3 class="text-caps u-margin-Bn">Performance</h3>
+						<h5 class="text-caps u-margin-Ts">SLA Misses</h5>
+						<div class="two small ui statistics">
+							<div class="statistic">
+								<div class="value">
+									3
+								</div>
+								<div class="label">
+									Reactive Policy
+								</div>
+							</div>
+							<div class="statistic">
+								<div class="value">
+									0
+								</div>
+								<div class="label">
+									Predictive Policy
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="sixteen wide column">
+						<h5 class="text-caps u-margin-Ts">CPU Units</h5>
+						<div class="two small ui statistics">
+							<div class="statistic">
+								<div class="value">
+									85,200
+								</div>
+								<div class="label">
+									Reactive Policy
+								</div>
+							</div>
+							<div class="statistic">
+								<div class="value">
+									45,849
+								</div>
+								<div class="label">
+									Predictive Policy
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> -->
+<!-- 	<div class="col-sm-4 text-center">
+		<input id="knob-server" value="11">
+		<h4>Model: Running Picture Workers</h4>
+		<input id="knob-money" value="1200">
+		<h4>Avg. $ Savings/Hour</h4>	</div>
+	<div class="col-sm-4 text-center">
+		<input id="knob-sla" value="0">
+		<h4>Autoscale: Running Picture Workers</h4>
+	</div>
+-->
+
+<div class="six wide column">
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="ui grid">
+				<div class="sixteen wide column">
+					<h3 class="text-caps">Real Time Pulse</h3>
+
+					<div class="ui relaxed divided list">
+						<div class="item">
+							<div class="right floated content">
+								<div class="ui mini horizontal statistic">
+									<div class="value u-padding-Hs">
+										<div id="workload-sl"></div>
+									</div>
+									<div id="workload" class="value hl-stat text-code">
+										--
+									</div>
+								</div>      
+							</div>  
+							<i class="large circle thin middle aligned icon"></i>
+							<div class="content">
+								<a class="header">Tot. Work Load</a>
+								<div class="description">Total Pictures Processed </div>
+							</div>
+						</div>							
+						<div class="item">
+							<div class="right floated content">
+								<div class="ui mini horizontal statistic">
+									<div class="value u-padding-Hs">
+										<div id="predictive-sl"></div>
+									</div>
+									<div id="predictive" class="value hl-stat text-code">
+										--
+									</div>
+								</div>      
+							</div>  
+							<i class="large circle thin middle aligned icon"></i>
+							<div class="content">
+								<a class="header">Predictive Policy</a>
+								<div class="description">Worker Count</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="right floated content">
+								<div class="ui mini horizontal statistic">
+									<div class="value u-padding-Hs">
+										<div id="reactive-sl"></div>
+									</div>
+									<div id="reactive" class="value hl-stat text-code">
+										--
+									</div>
+								</div>      
+							</div>  
+							<i class="large circle thin middle aligned icon"></i>
+							<div class="content">
+								<a class="header">Reactive Policy</a>
+								<div class="description">Worker Count</div>
+							</div>
+						</div>			
+						<div class="item">
+							<div class="right floated content">
+								<div class="mini ui statistics">
+									<div style="margin-bottom:0;" class="statistic">
+									<div id="sla-p" class="u-margin-Ls value hl-stat text-code">
+											--
+										</div>
+										<div class="label">
+											Predictive
+										</div>
+									</div>
+									<div style="margin-bottom:0;" class="statistic">
+									<div id="sla-r" class="u-margin-Ls value hl-stat text-code">
+											--
+										</div>
+										<div class="label">
+											Reactive
+										</div>
+									</div>
+								</div>							
+							</div>  
+							<i class="large circle thin middle aligned icon"></i>
+							<div class="content">
+								<a class="header">SLA Misses</a>
+								<div class="description">Count</div>
+							</div>
+						</div>					
+					</div>
+				</div>
+			</div>
+		</div>
+<!-- 		<div class="panel-footer text-right">
+			<button class="ui button">
+				Inject Workload Spike
+				<i class="fa fa-cloud"></i>
+			</button>			
+		</div> -->
+	</div>
+</div>
+<div class="sixteen wide column">
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="ui grid">
+				<div class="six wide column">
+					<h3 class="text-caps">Model Performance</h3>			
+				</div>
+				<div class="ten wide column">
+					<div id="model-choice" class="right small ui selection multiple dropdown">
+						<input type="hidden" name="gender">
+						<div class="default text">Choose Policies</div>
+						<i class="dropdown icon"></i>
+						<div class="menu">
+							<div class="item" data-value="m1">Model 1 (Champion)</div>
+							<div class="item" data-value="m2">Model 2</div>
+							<div class="item" data-value="m3">Model 3</div>
+							<div class="item" data-value="r">Reactive Policy</div>
+						</div>
+					</div>							
+				</div>
+				<div class="sixteen wide column">
+					<div id="results-graph"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+
